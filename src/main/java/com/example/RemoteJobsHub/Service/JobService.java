@@ -34,4 +34,21 @@ public class JobService {
 		}
 	}
 
+	public Job updateJob(Long id, Job updatejob) {
+		Job jobs=jobRepo.findById(id).orElse(null);
+		if(jobs !=null) {
+		jobs.setTitle(updatejob.getTitle());
+		jobs.setCompany(updatejob.getCompany());
+		jobs.setDescription(updatejob.getDescription());
+		jobs.setEmp_type(updatejob.getEmp_type());
+		jobs.setLocation(updatejob.getLocation());
+		jobs.setSalary(updatejob.getSalary());
+		jobs.setSkills(updatejob.getSkills());
+		jobs.setJobcategory(updatejob.getJobcategory());
+		return jobRepo.save(updatejob);
+		}
+		else {
+			return null;
+		}
+	}
 }
