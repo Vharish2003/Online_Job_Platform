@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.RemoteJobsHub.Entity.User;
 import com.example.RemoteJobsHub.Service.UserService;
 
-@Controller
-@RestController("/api/users")
+@RestController
+@RequestMapping("/api/users")
 public class UserController {
 	
 	@Autowired

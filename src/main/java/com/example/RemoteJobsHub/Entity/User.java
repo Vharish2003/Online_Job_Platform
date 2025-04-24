@@ -2,6 +2,8 @@ package com.example.RemoteJobsHub.Entity;
 
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,10 +23,15 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long u_id;
-	private String first_name;
-	private String last_name;
-	private String adress;
+	@JsonProperty("first_name")
+	private String firstName;
+	@JsonProperty("last_name")
+	private String lastName;
+	@JsonProperty("address")
+	private String address;
+	@JsonProperty("contact")
 	private long contact;
+	@JsonProperty("resumeUrl")
 	private String resumeUrl;
 
 }
