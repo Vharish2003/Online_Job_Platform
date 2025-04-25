@@ -25,4 +25,14 @@ public class CategoryService {
     public Optional<JobCategory>getById(Long id){
         return categoryRepo.findById(id);
     }
+    
+    public boolean deleteById(Long id) {
+    	if(categoryRepo.existsById(id)) {
+    		categoryRepo.deleteById(id);
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    }
 }
