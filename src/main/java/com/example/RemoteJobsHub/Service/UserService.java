@@ -25,6 +25,9 @@ public class UserService {
 	public Optional<User>getById(Long id){
 		return userRepo.findById(id);
 	}
+	public Optional<User> loginUser(String firstName, long contact) {
+        return userRepo.findByFirstNameAndContact(firstName, contact);
+    }
 	public boolean deleteById(Long id){
 		if(userRepo.existsById(id)) {
 			userRepo.deleteById(id);

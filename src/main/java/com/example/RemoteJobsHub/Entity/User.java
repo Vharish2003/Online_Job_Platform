@@ -33,5 +33,16 @@ public class User {
 	private long contact;
 	@JsonProperty("resumeUrl")
 	private String resumeUrl;
+	
+	public String getFirstName() {
+		// TODO Auto-generated method stub
+		return firstName;
+	}
+	public long getContact() {
+		// TODO Auto-generated method stub
+		return contact;
+	}
+	
+	
 
 }
